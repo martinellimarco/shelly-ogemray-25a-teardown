@@ -7,20 +7,22 @@ All the pin assignments below come from analyzing the stock firmware and from pr
 | | |
 |---|---|
 | Model string | `S3PB-O3AR000001`, Shelly app name `Ogemray25`, Gen3 |
-| Module | Shelly MOD1 (ESP32-C3FH4, 8 MB embedded flash, PCB antenna) |
+| Module | Daughterboard with an **ESP-Shelly-C38F** (ESP32-C3, rev v0.4, 8 MB embedded flash), 40 MHz crystal, wire antenna. The firmware identifies the platform as Shelly X MOD1 |
 | Metering IC | **Silergy SY7T502**, MSOP-10, two 1 mΩ shunts in parallel |
-| Relay | 40 A part, rated 25 A / 6000 W for the device |
+| Relay | NT99AES0.9, 12 V DC coil, NO contact rated 40 A / 277 VAC; the device itself is rated 25 A / 6000 W |
 | Inputs | one switch input (S1 / COM terminals), one push button |
 | LED | one addressable RGB, on the module board |
+| Bootloader | Shelly OS loader 1.0.3, ESP-IDF 5.5.2-s6 |
 
 ## Pinout
 
-The main board and the module board are joined by a labelled header:
+The main board and the module board are joined by a 10-pad header, labelled on the main board:
 
 | Pad | Function | GPIO |
 |---|---|---|
 | `TX` | to SY7T502 | 10 |
 | `RX` | from SY7T502 | 5 |
+| (no label) | unknown, no firmware use found | — |
 | `SY` | SY7T502 supply / enable | 7 |
 | `S1` | switch input (after the isolating front end, not the raw terminal) | 6 |
 | `SW` | push button, active low | 4 |
@@ -39,9 +41,11 @@ The module board has a separate 6-pin service header with no silkscreen:
 | 5 | BOOT | 9 |
 | 6 | GND | |
 
-Heads-up: both headers have a `TX`/`RX`. The ones on the main board are the metering bus, so a terminal there just shows garbage. The console is on the service header (the unlabeled one), with baud rate 115200 and parity 8N1.
+Heads-up: both headers have a `TX`/`RX`. The ones on the main board are the metering bus, so a terminal there just shows garbage. The console is on the service header (the unlabeled one), at 115200 8N1.
 
 Not on either header: the status LED on **GPIO18**. GPIO 0, 2, 3 and 8 are unused.
+
+The ESP-Shelly-C38F is the same chip used on the Shelly 1PM Gen3, so existing ESP32-C3 8 MB board settings should apply.
 
 NTC parameters from the firmware: B = 3450, 10 kΩ at 25 °C, over-temperature thresholds at 95 °C and 105 °C.
 
@@ -66,6 +70,16 @@ One thing I noticed in the stock logs: the SY7T502 driver throws an occasional `
 
 A single WS2812-style RGB on GPIO18, driven over RMT (20 MHz resolution, 64 memory symbols, one LED). It shows red during reset or emergency mode, green in normal use and blinks red and blue during a firmware update.
 
+## Button and factory reset
+
+From the stock firmware, in case a port wants to keep the same behaviour:
+
+- The action is chosen **on release**, by how long the button was held: about 5 s resets Wi-Fi and BLE settings, 8 s or 10 s does a factory reset, 30 s does a factory reset and also clears the default config.
+- Holding the button while the device boots, and letting go within 10 s, starts **safe mode** (scripts, schedules, webhooks and eco mode off for that boot). Ten quick restarts in a row trigger safe mode on their own.
+- The switch input can factory-reset the device too: **5 toggles within the first 60 s after power-up**, with no more than 10 s between them.
+
+None of these clear the debug settings, which is why a broken debug config can't be undone from the button.
+
 ## Flashing
 
 - No secure boot and no flash encryption. Reading and writing over serial with esptool works fine. I read the full 8 MB at 115200; 460800 stalled halfway with my adapter.
@@ -73,6 +87,8 @@ A single WS2812-style RGB on GPIO18, driven over RMT (20 MHz resolution, 64 memo
 - Download mode: hold BOOT (pin 5) low, pulse EN (pin 4) low, release EN, then release BOOT.
 - **Disconnect mains** and power the board from 3.3 V. The logic ground is referenced to mains. The ESP32-C3 peaks around 350 mA, so a weak 3.3 V from a cheap USB-UART adapter isn't enough.
 - **Back up the `shelly` partition at `0x7f0000`** before writing anything. It holds the device identity, and there's no other copy of it anywhere.
+- The console of the *running* firmware is only partly readable, roughly half the bytes come out garbled, most likely because eco mode shifts the clock. Download mode isn't affected.
+- OTA updates go to the inactive slot: the device reported slot 0 on 2.0.0 and slot 1 after updating to 2.0.1. Bootloader and partition table are identical in both releases.
 
 Partition table:
 
@@ -103,6 +119,8 @@ esp_image: segment 1: paddr=0005de18 vaddr=3fc92a00 size=02200h (  8704) load
 esp_image: segment 2: paddr=00060020 vaddr=42000020 size=1d59ach (1923500) map
 ```
 
+A full, anonymised capture of a reboot at debug level 3 (ROM, bootloader and application start-up) is in [logs/serial-boot-debug-level3.log](logs/serial-boot-debug-level3.log).
+
 Stock firmware at runtime, debug level 3:
 
 ```
@@ -113,5 +131,20 @@ D erature_monitor.cpp:103 Temp 0: uptime 1120.60, tC 29.51, ot 0, hf 150696
 E _sy7t502_driver.cpp:353 ERROR: Uart Timeout!, retries: 1
 ```
 
-A warning if you poke at it with the stock firmware: don't turn on the file logger (`sys.debug.file_log`) at debug level 3. Every file write gets logged, the logger writes that to a file, and it never stops. The unit dropped off Wi-Fi, the button stopped responding past its first level, and I had to fix the config over serial using esptool to dump and reflash thee configs.
+A warning if you poke at it with the stock firmware: don't turn on the file logger (`sys.debug.file_log`) at debug level 3. Every file write gets logged, the logger writes that to a file, and it never stops. The unit dropped off Wi-Fi, the button stopped responding past its first level, and I had to fix the config over serial, using esptool to dump the config partition, edit it and flash it back.
 
+# Pictures
+
+### Daughterboard
+
+The service header is at the top left, pins 1 (square pad) to 6.
+
+![Daughterboard](pictures/daughterboard.png)
+
+### Main board, top
+
+![Main board, top](pictures/motherboard-top.png)
+
+### Main board, bottom
+
+![Main board, bottom](pictures/motherboard-bottom.png)

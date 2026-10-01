@@ -1,0 +1,1066 @@
+# Ogemray 25A (Shelly app "Ogemray25", firmware 2.0.0), UART0 console at 115200 8N1
+# Debug level 3, file logger OFF. Captured across a reboot triggered over RPC.
+#
+# Anonymised: MAC addresses (and the device id / hostnames derived from them), all IP addresses,
+# client ids, Wi-Fi SSID, time zone, coordinates and production batch are replaced by <PLACEHOLDERS>.
+# Lines carrying keys or tokens (cloud key, JWS, Wi-Fi credentials) are removed entirely, and RPC
+# frame payloads are omitted.
+#
+# The running application's console is only partly readable on this hardware, most likely because
+# eco mode changes the APB clock and shifts the effective baud. Garbled lines were dropped:
+# 1239 lines captured, 1066 readable, 12 removed for carrying secrets, 1054 kept.
+
+D ns_sd_responder.cpp:411 ws(0x3fcb1b24): Goodbye 1 Ogemray25A-<MAC>.local any@any (<IPV6>)
+D ns_sd_responder.cpp:798 Removed [Ogemray25A-<MAC>.local any@any]
+D ns_sd_responder.cpp:798 Removed [shelly.local any@WiFi AP]
+D shos_http_base.cpp:568  0x3fcbcf64: Connection closed normally, 0x0 0
+D s_sd_responder.cpp:1149 Created  [Ogemray25A-<MAC>.local any@any]
+D s_sd_responder.cpp:1154 Added to [Ogemray25A-<MAC>.local any@any]: [ogemray25a-<MAC>._shelly._tcp port:80 txt:gen=3,app=Ogemray25,ver=2.0.0]
+D s_sd_responder.cpp:1154 Added to [Ogemray25A-<MAC>.local any@any]: [ogemray25a-<MAC>._http._tcp port:80 txt:gen=3]
+D s_sd_responder.cpp:1149 Created  [shelly.local any@WiFi AP]
+D s_sd_responder.cpp:1154 Added to [shelly.local any@WiFi AP]: [shelly._http._tcp port:80 txt:gen=3]
+D helly_ejs_event.cpp:114 notifying for event: {"component":"sys","event":"config_changed","restart_required":false,"ts":1790439171.46,"cfg_rev":28}
+I y_notifications.cpp:213 Event from sys: {"component":"sys","event":"config_changed","restart_required":false,"ts":1790439171.46,"cfg_rev":28}
+D ly_notifications.cpp:99 notifying 4 channels
+D y_notifications.cpp:103 trying dst='':HTTP_in info='' ?
+D ly_notifications.cpp:72 will NOT notify 'HTTP_in'
+D y_notifications.cpp:103 trying dst='<CLIENT>':WS_in info='from <IP> via ws0' ?
+D shos_rpc_inst.c:179     '<CLIENT>' -> 0x3fcb73a8
+D shos_rpc_inst.c:680     0x3fcb73a8 SEND FRAME (225): <payload omitted>
+D y_notifications.cpp:135 NotifyEvent: '<CLIENT>' (WS_in) -> ok? 1
+D y_notifications.cpp:103 trying dst='ogemray25a-<MAC>/events':MQTT info='' ?
+D shos_rpc_inst.c:179     'ogemray25a-<MAC>/events' -> 0x3fca5e68
+D shos_rpc_inst.c:680     0x3fca5e68 SEND FRAME (238): <payload omitted>
+D y_notifications.cpp:135 NotifyEvent: 'ogemray25a-<MAC>/events' (MQTT) -> ok? 1
+D y_notifications.cpp:103 trying dst='RPC.LOCAL':loopback info='' ?
+D ly_notifications.cpp:72 will NOT notify 'loopback'
+D y_notifications.cpp:139 notified 2 of 4 channels
+I y_notifications.cpp:168 Status change of sys: {"cfg_rev":28}
+D ly_notifications.cpp:99 notifying 4 channels
+D y_notifications.cpp:103 trying dst='':HTTP_in info='' ?
+D ly_notifications.cpp:72 will NOT notify 'HTTP_in'
+D y_notifications.cpp:103 trying dst='<CLIENT>':WS_in info='from <IP> via ws0' ?
+D shos_rpc_inst.c:179     '<CLIENT>' -> 0x3fcb73a8
+D shos_rpc_inst.c:700     QUEUED FRAME (134): <payload omitted>
+D y_notifications.cpp:135 NotifyStatus: '<CLIENT>' (WS_in) -> ok? 1
+D y_notifications.cpp:103 trying dst='ogemray25a-<MAC>/events':MQTT info='' ?
+D shos_rpc_inst.c:179     'ogemray25a-<MAC>/events' -> 0x3fca5e68
+D shos_rpc_inst.c:700     QUEUED FRAME (147): <payload omitted>
+D y_notifications.cpp:135 NotifyStatus: 'ogemray25a-<MAC>/events' (MQTT) -> ok? 1
+D y_notifications.cpp:103 trying dst='RPC.LOCAL':loopback info='' ?
+D ly_notifications.cpp:72 will NOT notify 'loopback'
+D y_notifications.cpp:139 notified 2 of 4 channels
+D helly_ejs_event.cpp:123 notifying for status: {"cfg_rev":28}
+D shos_vfs.c:295          / -> / pl 1 -> 1 0x3fca5758 (refs 1)
+D shos_vfs.c:295          / -> / pl 1 -> 1 0x3fca5758 (refs 1)
+D shos_rpc_inst.c:479     0x3fca5be4 FRAME SENT (1)
+D shos_rpc_inst.c:487     0x3fca5be4 CHAN CLOSED, remove? 1
+D shos_rpc_inst.c:582     0x3fca5be4 REMOVING
+D shos_http_base.cpp:113  0x3fcbcf64: Deleted
+D erature_monitor.cpp:103 Temp 0: uptime 132.75, tC 26.70, ot 0, hf 151976
+E _sy7t502_driver.cpp:353 ERROR: Uart Timeout!, retries: 2
+D shos_rpc_inst.c:479     0x3fcb73a8 FRAME SENT (1)
+D shos_rpc_inst.c:680     0x3fcb73a8 SEND FRAME (134): <payload omitted>
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/events/rpc @ 1 (238) -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/sys @ 1 (389) -> 0
+D shos_rpc_inst.c:479     0x3fca5e68 FRAME SENT (1)
+D shos_rpc_inst.c:680     0x3fca5e68 SEND FRAME (147): <payload omitted>
+D shos_rpc_inst.c:452     0x3fcb73a8 GOT FRAME (91): <payload omitted>
+D shos_rpc_inst.c:331     '127' '<CLIENT>' '' 'sys.GetConfig'
+I shos_rpc_inst.c:241     sys.GetConfig [127@<CLIENT>] via WS_in from <IP> via ws0
+D shos_rpc_inst.c:700     QUEUED FRAME (620): <payload omitted>
+D shos_rpc_inst.c:479     0x3fcb73a8 FRAME SENT (1)
+D shos_rpc_inst.c:680     0x3fcb73a8 SEND FRAME (620): <payload omitted>
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/events/rpc @ 1 (147) -> 0
+D shos_rpc_inst.c:479     0x3fca5e68 FRAME SENT (1)
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D shos_rpc_inst.c:479     0x3fcb73a8 FRAME SENT (1)
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439172.24}
+D hos_http_server.cpp:230 0x3fcbbc68: HTTP connection from <IP> via ws0
+D shos_rpc_inst.c:536     0x3fcae724 '' HTTP_in
+D shos_rpc_inst.c:438     0x3fcae724 CHAN OPEN (HTTP_in GET from <IP> via ws0)
+D shos_rpc_inst.c:464     0x3fcae724 GOT PARSED FRAME: '' -> '' 2079190983 args <omitted>
+I shos_rpc_inst.c:241     Shelly.Reboot [2079190983@] via HTTP_in GET from <IP> via ws0
+I shos_system.c:66        Rebooting in 1000 ms
+D shos_rpc_inst.c:680     0x3fcae724 SEND FRAME (63): <payload omitted>
+D s_sd_responder.cpp:1197 Remove [Ogemray25A-<MAC>.local any@any]
+D s_sd_responder.cpp:1197 Remove [shelly.local any@WiFi AP]
+D shos_http_base.cpp:568  0x3fcbbc68: Connection closed normally, 0x0 0
+D shos_rpc_inst.c:479     0x3fcae724 FRAME SENT (1)
+D shos_rpc_inst.c:487     0x3fcae724 CHAN CLOSED, remove? 1
+D shos_rpc_inst.c:582     0x3fcae724 REMOVING
+D shos_http_base.cpp:113  0x3fcbbc68: Deleted
+D ns_sd_responder.cpp:798 Removed [Ogemray25A-<MAC>.local any@any]
+D ns_sd_responder.cpp:798 Removed [shelly.local any@WiFi AP]
+D helly_ejs_event.cpp:114 notifying for event: {"component":"sys", "event":"scheduled_restart", "time_ms": 985, "ts":1790439172.34}
+I y_notifications.cpp:213 Event from sys: {"component":"sys", "event":"scheduled_restart", "time_ms": 985, "ts":1790439172.34}
+D ly_notifications.cpp:99 notifying 3 channels
+D y_notifications.cpp:103 trying dst='<CLIENT>':WS_in info='from <IP> via ws0' ?
+D shos_rpc_inst.c:179     '<CLIENT>' -> 0x3fcb73a8
+D shos_rpc_inst.c:680     0x3fcb73a8 SEND FRAME (208): <payload omitted>
+D y_notifications.cpp:135 NotifyEvent: '<CLIENT>' (WS_in) -> ok? 1
+D y_notifications.cpp:103 trying dst='ogemray25a-<MAC>/events':MQTT info='' ?
+D shos_rpc_inst.c:179     'ogemray25a-<MAC>/events' -> 0x3fca5e68
+D shos_rpc_inst.c:680     0x3fca5e68 SEND FRAME (221): <payload omitted>
+D y_notifications.cpp:135 NotifyEvent: 'ogemray25a-<MAC>/events' (MQTT) -> ok? 1
+D y_notifications.cpp:103 trying dst='RPC.LOCAL':loopback info='' ?
+D ly_notifications.cpp:72 will NOT notify 'loopback'
+D y_notifications.cpp:139 notified 2 of 3 channels
+D shos_rpc_inst.c:479     0x3fcb73a8 FRAME SENT (1)
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/events/rpc @ 1 (221) -> 0
+D shos_rpc_inst.c:479     0x3fca5e68 FRAME SENT (1)
+D erature_monitor.cpp:103 Temp 0: uptime 133.36, tC 26.79, ot 0, hf 153940
+D ns_sd_responder.cpp:753 ws(0x3fcb1b24): Remove
+D ns_sd_responder.cpp:603 ws(0x3fcb1b24): Leaving IPv4 MDNS group
+D hos_lwip_eth_if.cpp:391 ws(0x3fcb1b24): IGMP leave <IP>
+D ns_sd_responder.cpp:610 ws(0x3fcb1b24): Leaving IPv6 MDNS group
+D hos_lwip_eth_if.cpp:401 ws(0x3fcb1b24): MLD6 leave <IPV6>
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 163 MC 544 ctr 19/105 ping 0 num_act 0
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1b24): Status: server 0 oper_up 1 link_up 1/1 hf 154160
+D shos_rpc_inst.c:570     0x3fcb73a8 CLOSING
+D shos_rpc_inst.c:570     0x3fca5e68 CLOSING
+D shos_rpc_inst.c:570     0x3fca5ed4 CLOSING
+I shos_mqtt_conn.c:858    MQTT0: Disconnect
+D shos_rpc_inst.c:487     0x3fcb73a8 CHAN CLOSED, remove? 1
+D shos_rpc_inst.c:582     0x3fcb73a8 REMOVING
+D shos_rpc_inst.c:487     0x3fca5ed4 CHAN CLOSED, remove? 0
+I shos_mqtt_conn.c:538    MQTT0: Disconnected
+D shos_rpc_inst.c:487     0x3fca5e68 CHAN CLOSED, remove? 0
+D helly_ejs_event.cpp:114 notifying for event: {"component":"mqtt", "event":"disconnected", "ts":1790439173.17}
+I y_notifications.cpp:168 Status change of mqtt: {"connected":false}
+D ly_notifications.cpp:99 notifying 2 channels
+D y_notifications.cpp:103 trying dst='ogemray25a-<MAC>/events':MQTT info='' ?
+D ly_notifications.cpp:72 will NOT notify 'MQTT'
+D y_notifications.cpp:103 trying dst='RPC.LOCAL':loopback info='' ?
+D ly_notifications.cpp:72 will NOT notify 'loopback'
+D y_notifications.cpp:139 notified 0 of 2 channels
+D helly_ejs_event.cpp:123 notifying for status: {"connected":false}
+D shos_http_base.cpp:113  0x3fcbc210: Deleted
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439173.24}
+D os_esp32xx_wifi.cpp:234 WiFi: STA disconnected
+D shos_vfs.c:295          storage.json -> /storage.json pl 1 -> 1 0x3fca5758 (refs 1)
+D shos_vfs.c:388          open storage.json 0x0 0x1b6 => 0x3fca5758 storage.json 0 => 256 (refs 1)
+D shos_vfs.c:566          fstat 256 => 0x3fca5758:0 => 0 (size 107)
+D shos_vfs.c:594          lseek 256 0 2 => 0x3fca5758:0 => 107
+D shos_vfs.c:566          fstat 256 => 0x3fca5758:0 => 0 (size 107)
+D shos_vfs.c:594          lseek 256 0 0 => 0x3fca5758:0 => 0
+D shos_vfs.c:421          close 256 => 0x3fca5758:0 => 0 (refs 0)
+D shos_jstore.c:188       Got id: 'switch:0'
+D shos_jstore.c:229       Got data: '{"state":false,"on_time_rst_ts":0,"switch_on_rst_ts":0,"on_above_thr_rst_ts":0}'
+D shos_vfs.c:295          storage.json -> /storage.json pl 1 -> 1 0x3fca5758 (refs 1)
+D shos_vfs.c:388          open storage.json 0x601 0x1b6 => 0x3fca5758 storage.json 0 => 256 (refs 1)
+D shos_vfs.c:566          fstat 256 => 0x3fca5758:0 => 0 (size 0)
+D shos_vfs.c:507          write 256 107 => 0x3fca5758:0 => 107
+D shos_vfs.c:421          close 256 => 0x3fca5758:0 => 0 (refs 0)
+D shos_vfs.c:295          storage.json -> /storage.json pl 1 -> 1 0x3fca5758 (refs 1)
+D shos_vfs.c:388          open storage.json 0x0 0x1b6 => 0x3fca5758 storage.json 0 => 256 (refs 1)
+D shos_vfs.c:566          fstat 256 => 0x3fca5758:0 => 0 (size 107)
+D shos_vfs.c:594          lseek 256 0 2 => 0x3fca5758:0 => 107
+D shos_vfs.c:566          fstat 256 => 0x3fca5758:0 => 0 (size 107)
+D shos_vfs.c:594          lseek 256 0 0 => 0x3fca5758:0 => 0
+D shos_vfs.c:421          close 256 => 0x3fca5758:0 => 0 (refs 0)
+D shelly_storage.cpp:171  storage.json: {"items":[
+I shos_vfs.c:1076         Unmounting filesystems
+D shos_vfs_dev.c:206      Close fs_0 (esp32part) refs 1
+D shos_vfs_dev.c:206      Close shelly (esp32part) refs 0
+D shos_vfs_dev.c:206      Close scratch (esp32part) refs 0
+D shos_vfs_dev.c:206      Close fs_1 (esp32part) refs 0
+D shos_vfs_dev.c:206      Close app_1 (esp32part) refs 0
+D shos_vfs_dev.c:206      Close fs_0 (esp32part) refs 0
+D shos_vfs_dev.c:206      Close app_0 (esp32part) refs 0
+D shos_vfs_dev.c:206      Close nvs (esp32part) refs 0
+D shos_vfs_dev.c:206      Close otadata (esp32part) refs 0
+D shos_lwip.cpp:196       ws(0x3fcb1b24): Changed: ....IGMS.. (0xf0)
+I shos_lwip.cpp:118       Default: ws(0x3fcb1b24) -> (null) (<IP>, NAT? no)
+D shos_lwip.cpp:82        DNS: <IP> <IP> -> <IP>
+D shos_lwip.cpp:196       ws(0x3fcb1b24): Changed: ...S...... (0x8)
+I shos_lwip.cpp:208       ws(0x3fcb1b24): Status down
+D esp32xx_wifi_if.cpp:233 PK check: link 0 gw 0 UC 166 MC 548 ctr 16/105 ping 0 num_act 0
+D shos_lwip.cpp:196       ws(0x3fcb1b24): Changed: ..L....... (0x4)
+I shos_lwip.cpp:204       ws(0x3fcb1b24): Link down
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1b24): Status: server 0 oper_up 0 link_up 0/0 hf 155120
+D shos_lwip.cpp:196       ws(0x3fcb1b24): Changed: .R........ (0x2)
+I shos_lwip.cpp:201       ws(0x3fcb1b24): Removed
+D hos_lwip_eth_if.cpp:391 ws(0x3fcb1b24): IGMP leave <IP>
+D hos_lwip_eth_if.cpp:401 ws(0x3fcb1b24): MLD6 leave <IPV6>
+D shos_lwip_eth_if.cpp:50 ws(0x3fcb1b24): Deleting...
+I shos_system.c:49        Restarting
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xd (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x107c
+load:0x403cbf10,len:0x16c0
+load:0x403ce710,len:0x2804
+entry 0x403cbf1a
+boot: Shelly OS loader 1.0.3 (IDF 5.5.2-s6)
+boot: chip revision: v0.4
+boot: efuse block revision: v1.3
+boot.esp32c3: SPI Speed      : 80MHz
+boot.esp32c3: SPI Mode       : DIO
+boot.esp32c3: SPI Flash Size : 8MB
+boot: Enabling RNG early entropy source...
+boot: Partition Table @ 0x10000 (6699fbe0):
+boot: ## Label            Usage          Type ST Offset   Length   F
+boot:  0 otadata          OTA data         01 00 00011000 00002000 1
+boot:  1 nvs              WiFi data        01 02 00014000 0000c000 0
+boot:  2 app_0            OTA app          00 10 00020000 00280000 1
+boot:  3 fs_0             FS               01 82 002a0000 00100000 1
+boot:  4 app_1            OTA app          00 11 003a0000 00280000 1
+boot:  5 fs_1             FS               01 82 00620000 00100000 1
+boot:  6 scratch          Unknown data     01 80 007e0000 00010000 1
+boot:  7 shelly           Factory data     01 88 007f0000 00010000 1
+boot: End of partition table
+shos_ota: Read BS0: seq 2609220001 as 0 rs 1 ba 2 mfs 0 c 1 | v 1
+shos_ota: Read BS1: seq 2609220001 as 0 rs 1 ba 2 mfs 0 c 1 | v 1
+shos_ota: Booting app 0
+esp_image: segment 0: paddr=00020020 vaddr=3c1e0020 size=3ddf0h (253424) map
+esp_image: segment 1: paddr=0005de18 vaddr=3fc92a00 size=02200h (  8704) load
+esp_image: segment 2: paddr=00060020 vaddr=42000020 size=1d59ach (1923500) map
+esp_image: segment 3: paddr=002359d4 vaddr=3fc94c00 size=00b94h (  2964) load
+esp_image: segment 4: paddr=00236570 vaddr=40380000 size=127fch ( 75772) load
+esp_image: segment 5: paddr=00248d74 vaddr=500001fc size=00020h (    32) load
+boot: Loaded app from partition at offset 0x20000
+boot: Disabling RNG early entropy source...
+I shos_freertos.c:80      Ogemray25 2.0.0 (20260710-101145/2.0.0-g87fbfa4)
+I shos_freertos.c:81      CPU: 160 MHz, FreeRTOS 10.5.1, heap: 277840 total, 247720 free
+I shos_esp32xx_main.c:107 ESP-IDF 5.5.2-s6; pt @ 0x10000; boot part: app_0; flash: 8M
+I shos_vfs_dev.c:73       otadata: esp32part ({"label": "otadata"}), size 8192
+I shos_vfs_dev.c:73       nvs: esp32part ({"label": "nvs"}), size 49152
+I shos_vfs_dev.c:73       app_0: esp32part ({"label": "app_0"}), size 2621440
+I shos_vfs_dev.c:73       fs_0: esp32part ({"label": "fs_0"}), size 1048576
+I shos_vfs_dev.c:73       app_1: esp32part ({"label": "app_1"}), size 2621440
+I shos_vfs_dev.c:73       fs_1: esp32part ({"label": "fs_1"}), size 1048576
+I shos_vfs_dev.c:73       scratch: esp32part ({"label": "scratch"}), size 65536
+I shos_vfs_dev.c:73       shelly: esp32part ({"label": "shelly"}), size 65536
+I shos_vfs.c:182          /: LFS @ fs_0, opts {"bs":4096,"is":128}
+I shos_vfs_lfs.c:58       LFS 2.1 size 1048576 bs 4096 is 128 cs 128 => 0
+I shos_vfs.c:357          /: size 1048576, used: 475136, free: 573440
+I shos_sys_config.c:180   MAC: <MAC>
+I shos_sys_config.c:196   Time: 0, LKGT: 1790439030
+I shos_time.cpp:65        Setting time from LKGT (1790439030.000 delta +1790439029.742)
+I shos_core.cpp:96        Setting TZ to '<TZ>,M3.5.0,M10.5.0/3'
+D shos_init.cpp:40        Init adc 1.0.0 (95c4f2c5756bc8e0f4d4985e65a30cee9c526dff) hf 235292...
+D shos_init.cpp:40        Init kvstore 1.0.0 (ed69d279290bf79ff9a47f2a7fc37371c74169af) hf 235216...
+D shos_init.cpp:40        Init bt-common 1.5.0 (c6a555db34e5e55418efe2505353287a0fcb5393) hf 235212...
+D shos_init.cpp:40        Init location 1.0 (c3ba436b25fbbcfe4498a84685e1d5d086cea8cd) hf 235096...
+D shos_init.cpp:40        Init sntp 2.0.0 (0f328e471183672c424146945100506166148d6a) hf 235188...
+D shos_init.cpp:40        Init cron 1.0 (ec672470fe904401dec5235ee68a2e5f88d6e4b2) hf 235104...
+D shos_init.cpp:40        Init jstore 1.0 (b33b6de66028c496a0cb808dc76da2c7cdb1f48c) hf 235108...
+D shos_init.cpp:40        Init crontab 1.0 (59b43ab2ce318a18ce62d93cd9a7ce846f4ef1ee) hf 235008...
+D shos_vfs.c:295          crontab.json -> /crontab.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open crontab.json 0x0 0x1b6 => 0x3fca57dc crontab.json -2 => -2 (refs 0)
+D shos_init.cpp:40        Init http-param 1.0.0 (1375f76e0653d86ac22696386c10acbe62537bce) hf 235004...
+D shos_init.cpp:40        Init digest-auth 1.0.0 (a67fdc77ebc3dda1eaecb3cc274dfeff5fa70cde) hf 235000...
+D shos_init.cpp:40        Init wifi 2.0.0 (aac641e9b18e4378990e1d483ba9374e094fd2fe) hf 235000...
+I shos_wifi.c:275         WiFi mode: STA
+D shos_init.cpp:40        Init dns-sd 3.1.4 (a305c92d393accc91c64aa692d82a176f5ed8e14) hf 234628...
+D os_dns_sd_socket.cpp:52 Opened MDNS socket
+D shos_init.cpp:40        Init rpc-common 1.1.0 (fea9482df0d5f40da4948e421acd02c5428335a2) hf 234452...
+D shos_init.cpp:40        Init file-logger 1.0.0 (e35b7d8c1754ef88d882b6d5ff41f1068a928d07) hf 234200...
+D shos_init.cpp:40        Init gen2-embedded-web 1.0.0 (46414c4fd6dccc9b814d0ca5ce64ea95cf57dedf) hf 234048...
+D shos_init.cpp:40        Init http 1.1.0 (d8e1548fd4cce6ea7eaddb15fab3eaefe267946d) hf 234040...
+I hos_http_server.cpp:163 Listening on <IP>
+D shos_init.cpp:40        Init mqtt 1.0 (0db54e57f718245eadff37e598a01ed4cdf3aa10) hf 233960...
+D shos_init.cpp:40        Init ota-source-http-client 1.0.0 (3bef09054b5a3180d959f24e95d46f32c92edf88) hf 233528...
+D shos_init.cpp:40        Init pwm 1.5.0 (0a00992bbf3d0bc9e4c0d7cb991b8af338e18049) hf 233508...
+D shos_init.cpp:40        Init rpc-gatts 2.0.0 (9affbf354a0d62c325478cdbbb04b5fc971a41de) hf 233604...
+D shos_init.cpp:40        Init rpc-http-ws 1.0.0 (c31b201f95eff299cfd60bc8a2b58e89d1021f05) hf 233520...
+D hos_http_server.cpp:751 Registered handler for /rpc
+D shos_init.cpp:40        Init rpc-loopback 1.0 (1921860d3879a51503e9b8bcb4375275d364ba08) hf 233472...
+D shos_rpc_inst.c:536     0x3fca5f58 'RPC.LOCAL' loopback
+D shos_init.cpp:40        Init rpc-mqtt 1.0 (81ebd08cc899bc6081867185faf3cbd0c2734331) hf 233360...
+I _rpc_channel_mqtt.c:215 0x3fca5eec ogemray25a-<MAC>/rpc
+D shos_rpc_inst.c:536     0x3fca5eec 'ogemray25a-<MAC>/events' MQTT
+D shos_init.cpp:40        Init rpc-service-config 1.0 (7762efa0db8919ea067ccb9c52f19f3c83cd03af) hf 233116...
+D shos_init.cpp:40        Init rpc-service-dev 1.0.0 (3e2c6bce9dae0a8ff9cc68dbba5d9fbd9753716f) hf 233008...
+D shos_init.cpp:40        Init rpc-service-fs 1.0 (be9239ac1e6836980f605646859194a7c1f4f8f5) hf 232856...
+D shos_init.cpp:40        Init rpc-service-ota 2.0.0 (6dbd5af0450e0f59e8e723a91eda150edcd8cab3) hf 232740...
+D shos_init.cpp:40        Init rpc-udp 2.0.0 (54dc7f37c08478e37a640f716f4003a1a732749a) hf 232468...
+D shos_init.cpp:40        Init shelly-cloud  (96fbfe5a96ae2a424b4240891ed4ba3c8e0ec916) hf 232564...
+D shos_init.cpp:40        Init shelly-espruino  () hf 232476...
+D shos_init.cpp:40        Init shelly-factory-data 1.0.0 () hf 206936...
+I lly_factory_data.cpp:69 Factory data (config): version 2, model=S3PB-O3AR000001 batch=<BATCH> key=(294 bytes)
+D shos_init.cpp:40        Init shelly-filesystem-whitelist 1.0.0 () hf 206464...
+D shos_init.cpp:40        Init shelly-tz  () hf 206544...
+D shos_init.cpp:40        Init shelly-xmod  () hf 206524...
+D shos_vfs_conf.c:139     Applying dev shelly off 0 len 383
+D shos_vfs_dev.c:206      Close shelly (esp32part) refs 1
+D shos_vfs.c:295          conf1.json.try -> /conf1.json.try pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:538          stat conf1.json.try => 0x3fca57dc conf1.json.try => -2 (size 0)
+D shos_vfs.c:295          conf1.json -> /conf1.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:538          stat conf1.json => 0x3fca57dc conf1.json => 0 (size 689)
+D shos_vfs_conf.c:58      Loading conf1.json
+D shos_vfs.c:295          conf1.json -> /conf1.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open conf1.json 0x0 0x1b6 => 0x3fca57dc conf1.json 0 => 256 (refs 1)
+D shos_vfs.c:566          fstat 256 => 0x3fca57dc:0 => 0 (size 689)
+D shos_vfs.c:594          lseek 256 0 2 => 0x3fca57dc:0 => 689
+D shos_vfs.c:566          fstat 256 => 0x3fca57dc:0 => 0 (size 689)
+D shos_vfs.c:594          lseek 256 0 0 => 0x3fca57dc:0 => 0
+D shos_vfs.c:421          close 256 => 0x3fca57dc:0 => 0 (refs 0)
+D shos_config.c:273       Set [xmod.tok.aud] = [Ogemray25]
+D shos_config.c:273       Set [xmod.tok.iat] = [1730815362]
+D shos_config.c:273       Set [xmod.tok.jti] = [<JTI>]
+D shos_config.c:273       Set [xmod.tok.v] = [1]
+D shos_config.c:273       Set [xmod.tok.p] = [Ogemray25A]
+D shos_config.c:273       Set [xmod.tok.n] = [Ogemray 25A]
+D shos_config.c:273       Set [xmod.tok.url] = [http://en.ogemray.com/index.html]
+D shos_config.c:273       Set [xmod.tok.f] = [1]
+I shelly_xmod.cpp:357     xmod: deviceid Ogemray25A-????????????
+I shelly_xmod.cpp:494     xmod: "Ogemray 25A" by "" (v1)
+D shos_init.cpp:40        Init shelly  () hf 206260...
+I shelly.cpp:569          Shelly init
+I shelly.cpp:494          Reset reason: ESP_RST_SW RestartInfo flags: 0x0000 Quick restarts: 1
+D shos_vfs_conf.c:139     Applying dev shelly off 0 len 383
+D shos_vfs_dev.c:206      Close shelly (esp32part) refs 1
+D shos_vfs.c:295          conf1.json.try -> /conf1.json.try pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:538          stat conf1.json.try => 0x3fca57dc conf1.json.try => -2 (size 0)
+D shos_vfs.c:295          conf1.json -> /conf1.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:538          stat conf1.json => 0x3fca57dc conf1.json => 0 (size 689)
+D shos_vfs_conf.c:58      Loading conf1.json
+D shos_vfs.c:295          conf1.json -> /conf1.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open conf1.json 0x0 0x1b6 => 0x3fca57dc conf1.json 0 => 256 (refs 1)
+D shos_vfs.c:566          fstat 256 => 0x3fca57dc:0 => 0 (size 689)
+D shos_vfs.c:594          lseek 256 0 2 => 0x3fca57dc:0 => 689
+D shos_vfs.c:566          fstat 256 => 0x3fca57dc:0 => 0 (size 689)
+D shos_vfs.c:594          lseek 256 0 0 => 0x3fca57dc:0 => 0
+D shos_vfs.c:421          close 256 => 0x3fca57dc:0 => 0 (refs 0)
+D shos_config.c:273       Set [xmod.tok.aud] = [Ogemray25]
+D shos_config.c:273       Set [xmod.tok.iat] = [1730815362]
+D shos_config.c:273       Set [xmod.tok.jti] = [<JTI>]
+D shos_config.c:273       Set [xmod.tok.v] = [1]
+D shos_config.c:273       Set [xmod.tok.p] = [Ogemray25A]
+D shos_config.c:273       Set [xmod.tok.n] = [Ogemray 25A]
+D shos_config.c:273       Set [xmod.tok.url] = [http://en.ogemray.com/index.html]
+D shos_config.c:273       Set [xmod.tok.f] = [1]
+D shos_vfs_dev.c:206      Close shelly (esp32part) refs 1
+D shos_vfs.c:295          conf2.json.try -> /conf2.json.try pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:538          stat conf2.json.try => 0x3fca57dc conf2.json.try => -2 (size 0)
+D shos_vfs.c:295          conf2.json -> /conf2.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:538          stat conf2.json => 0x3fca57dc conf2.json => -2 (size 0)
+D shos_vfs.c:295          conf3.json.try -> /conf3.json.try pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:538          stat conf3.json.try => 0x3fca57dc conf3.json.try => -2 (size 0)
+D shos_vfs.c:295          conf3.json -> /conf3.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:538          stat conf3.json => 0x3fca57dc conf3.json => 0 (size 590)
+D shos_vfs_conf.c:58      Loading conf3.json
+D shos_vfs.c:295          conf3.json -> /conf3.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open conf3.json 0x0 0x1b6 => 0x3fca57dc conf3.json 0 => 256 (refs 1)
+D shos_vfs.c:566          fstat 256 => 0x3fca57dc:0 => 0 (size 590)
+D shos_vfs.c:594          lseek 256 0 2 => 0x3fca57dc:0 => 590
+D shos_vfs.c:566          fstat 256 => 0x3fca57dc:0 => 0 (size 590)
+D shos_vfs.c:594          lseek 256 0 0 => 0x3fca57dc:0 => 0
+D shos_vfs.c:421          close 256 => 0x3fca57dc:0 => 0 (refs 0)
+D shos_config.c:273       Set [device.id] = [ogemray25a-<MAC>]
+D shos_config.c:273       Set [mqtt.client_id] = [ogemray25a-<MAC>]
+D shos_config.c:273       Set [mqtt.will_topic] = [ogemray25a-<MAC>/online]
+D shos_config.c:273       Set [mqtt.topic_prefix] = [ogemray25a-<MAC>]
+D shos_config.c:273       Set [rpc.mqtt.default_dst] = [ogemray25a-<MAC>/events]
+D shos_config.c:148       Unknown key [wifi.sta.dhcp_hostname]
+D shos_config.c:148       Unknown key [wifi.sta1.dhcp_hostname]
+D shos_config.c:148       Unknown key [wifi.sta2.dhcp_hostname]
+D shos_vfs.c:295          shelly_kvs.json -> /shelly_kvs.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open shelly_kvs.json 0x0 0x1b6 => 0x3fca57dc shelly_kvs.json -2 => -2 (refs 0)
+D shos_vfs.c:295          shelly_kvs.json.tmp -> /shelly_kvs.json.tmp pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open shelly_kvs.json.tmp 0x0 0x1b6 => 0x3fca57dc shelly_kvs.json.tmp -2 => -2 (refs 0)
+D shos_vfs.c:295          storage.json -> /storage.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open storage.json 0x0 0x1b6 => 0x3fca57dc storage.json 0 => 256 (refs 1)
+D shos_vfs.c:566          fstat 256 => 0x3fca57dc:0 => 0 (size 107)
+D shos_vfs.c:594          lseek 256 0 2 => 0x3fca57dc:0 => 107
+D shos_vfs.c:566          fstat 256 => 0x3fca57dc:0 => 0 (size 107)
+D shos_vfs.c:594          lseek 256 0 0 => 0x3fca57dc:0 => 0
+D shos_vfs.c:421          close 256 => 0x3fca57dc:0 => 0 (refs 0)
+D shelly_storage.cpp:171  storage.json: {"items":[
+D hos_http_server.cpp:751 Registered handler for /debug/log
+D hos_http_server.cpp:751 Registered handler for /debug/logs
+D ponents_registry.cpp:33 Registering sys:-1
+D hos_http_server.cpp:751 Registered handler for /shelly
+D hos_http_server.cpp:751 Registered handler for /robots.txt
+D hos_http_server.cpp:751 Registered handler for /ota
+I shelly_sys.cpp:636      Eco mode enabled (40-160 sleep 0 DTIM 1 idle 0)
+D ponents_registry.cpp:33 Registering wifi:-1
+D shos_vfs.c:295          cloud_relay_devices.json -> /cloud_relay_devices.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open cloud_relay_devices.json 0x0 0x1b6 => 0x3fca57dc cloud_relay_devices.json -2 => -2 (refs 0)
+D shos_vfs.c:295          cloud_relay_devices.json.tmp -> /cloud_relay_devices.json.tmp pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open cloud_relay_devices.json.tmp 0x0 0x1b6 => 0x3fca57dc cloud_relay_devices.json.tmp -2 => -2 (refs 0)
+D ponents_registry.cpp:33 Registering ble:-1
+D _gap_adv_manager.cpp:41 Slot[system] acquired
+I helly_bluetooth.cpp:569 Provision state: 2, was_online: 2
+D _gap_adv_manager.cpp:41 Slot[user] acquired
+D ponents_registry.cpp:33 Registering cloud:-1
+D cloud_connection.cpp:71 should not reconnect
+D ponents_registry.cpp:33 Registering mqtt:-1
+D ponents_registry.cpp:33 Registering ws:-1
+D shos_vfs.c:295          scripts.json -> /scripts.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open scripts.json 0x0 0x1b6 => 0x3fca57dc scripts.json -2 => -2 (refs 0)
+I shelly_scripts.cpp:84   Loaded 0 scripts
+D s_sd_responder.cpp:1149 Created  [Ogemray25A-<MAC>.local any@any]
+D s_sd_responder.cpp:1154 Added to [Ogemray25A-<MAC>.local any@any]: [ogemray25a-<MAC>._shelly._tcp port:80 txt:gen=3,app=Ogemray25,ver=2.0.0]
+D s_sd_responder.cpp:1154 Added to [Ogemray25A-<MAC>.local any@any]: [ogemray25a-<MAC>._http._tcp port:80 txt:gen=3]
+D s_sd_responder.cpp:1149 Created  [shelly.local any@WiFi AP]
+D s_sd_responder.cpp:1154 Added to [shelly.local any@WiFi AP]: [shelly._http._tcp port:80 txt:gen=3]
+E shos_event.cpp:227      Group SHI is not registered
+D hos_http_server.cpp:751 Registered handler for /
+D shos_init.cpp:40        Init shelly-dynamic  () hf 198332...
+D shos_vfs.c:295          components_storage.json -> /components_storage.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open components_storage.json 0x2 0x1b6 => 0x3fca57dc components_storage.json 0 => 256 (refs 1)
+D shos_vfs.c:566          fstat 256 => 0x3fca57dc:0 => 0 (size 128)
+D shos_vfs.c:594          lseek 256 0 1 => 0x3fca57dc:0 => 128
+I ponents_storage.cpp:195 Loaded dynamic components storage (revision: 0, total: 0, free: 0, size 128, error 0)
+D shos_vfs.c:421          close 256 => 0x3fca57dc:0 => 0 (refs 0)
+D shos_init.cpp:40        Init shelly-framecounter  () hf 198260...
+D shos_init.cpp:40        Init shelly-silabs-updater 1.0.0 () hf 198236...
+D shos_init.cpp:40        Init shelly-webhook  () hf 198228...
+D shos_init.cpp:40        Init shelly-bthome  () hf 198108...
+D ponents_registry.cpp:33 Registering bthome:-1
+D shos_vfs.c:295          bthome_device_fw.tmp -> /bthome_device_fw.tmp pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:625          unlink bthome_device_fw.tmp => 0x3fca57dc bthome_device_fw.tmp => -2
+D shos_vfs.c:295          . -> /. pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:724          opendir . => 0x3fca57dc . 0x3fcb073c => 0x3fca5c54 (refs 1)
+D shos_vfs.c:820          closedir 0x3fca5c54 => 0x3fca57dc:0x3fcb073c => 0 (refs 0)
+D shos_vfs.c:295          bthome_replay.json -> /bthome_replay.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open bthome_replay.json 0x0 0x1b6 => 0x3fca57dc bthome_replay.json -2 => -2 (refs 0)
+D shos_vfs.c:295          bthome_replay.json.tmp -> /bthome_replay.json.tmp pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open bthome_replay.json.tmp 0x0 0x1b6 => 0x3fca57dc bthome_replay.json.tmp -2 => -2 (refs 0)
+I y_replay_tracker.hpp:88 BTHR: loaded 0 counters
+D shos_init.cpp:40        Init shelly-sensor  () hf 196108...
+D shos_init.cpp:40        Init shelly-input  () hf 196164...
+D shos_init.cpp:40        Init shelly-pm  () hf 196116...
+D shos_init.cpp:40        Init shelly-switch  () hf 196164...
+D shos_init.cpp:40        Init shelly-blecontrol  () hf 194492...
+D shos_init.cpp:40        Init shelly-jwt  () hf 194124...
+D shos_init.cpp:40        Init shelly-knx  () hf 194176...
+D ponents_registry.cpp:33 Registering knx:-1
+D shos_init.cpp:40        Init shelly-schedule  () hf 193660...
+D shos_init.cpp:40        Init shelly-virtual  () hf 193432...
+D shos_init.cpp:40        Init shelly-vc-manager  () hf 192268...
+D shos_init.cpp:40        Init shos-boot-state 1.0.0 (c53c2119af1b75a94b9dcdfad2a3f1469bf9db9b) hf 192268...
+D shos_init.cpp:40        Init zip 1.0.0 (f2997a938e9c4b6fde644d6bbcf755278dbfdea8) hf 192224...
+D shos_init.cpp:49        Module espruino_js dc3e40137525ea00861a2e706f895040a648190e
+D shos_init.cpp:49        Module lwip d323b3b4c2a3629fb8431e58bd2310e97d207580
+D shos_init.cpp:49        Module mbedtls 9da6e9d152baaae8f54919e1482ec3de0cc97523
+D shos_init.cpp:49        Module nimble c7c919fcb0a81d1a1361bde1b0657dd59c888d67
+D shos_init.cpp:49        Module shelly-os c30ace2768978eab36a694c33e09d30532eb5c80
+D y_sy7t502_driver.cpp:27 SY7T502 power_pin=7 uart=1 rx=5 tx=10 baud=4800
+I _sy7t502_driver.cpp:101 Init SY7T502 PM Done!
+D shos_vfs.c:295          /counter_total_0 -> /counter_total_0 pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open /counter_total_0 0x0 0x1b6 => 0x3fca57dc counter_total_0 0 => 256 (refs 1)
+D shos_vfs.c:566          fstat 256 => 0x3fca57dc:0 => 0 (size 40)
+D istent_counters.cpp:501 Record found (r) in file /counter_total_0, pos 0, per.counter is 1
+D shos_vfs.c:594          lseek 256 0 1 => 0x3fca57dc:0 => 40
+D shos_vfs.c:594          lseek 256 10 0 => 0x3fca57dc:0 => 10
+D shos_vfs.c:421          close 256 => 0x3fca57dc:0 => 0 (refs 0)
+D istent_counters.cpp:452 0x3fcae630 id 0, counter_val 1 using FullPersist mode!
+D istent_counters.cpp:467 PCS - total: 1.000000, by minute[0.000000, 0.000000, 0.000000], minute_ts:1790439120!
+D sistent_counters.cpp:46 0x3fcb1f9c(0) init ts=1790439120 tot=1.000000 c=[0.000000,0.000000,0.000000]
+D sistent_counters.cpp:76 0x3fcb1f9c(0) no clock
+D shos_vfs.c:295          /counter_total_0 -> /counter_total_0 pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open /counter_total_0 0x0 0x1b6 => 0x3fca57dc counter_total_0 0 => 256 (refs 1)
+D shos_vfs.c:566          fstat 256 => 0x3fca57dc:0 => 0 (size 40)
+D istent_counters.cpp:501 Record found (r) in file /counter_total_0, pos 1, per.counter is 0
+D shos_vfs.c:594          lseek 256 0 1 => 0x3fca57dc:0 => 40
+D shos_vfs.c:594          lseek 256 20 0 => 0x3fca57dc:0 => 20
+D shos_vfs.c:421          close 256 => 0x3fca57dc:0 => 0 (refs 0)
+D istent_counters.cpp:452 0x3fcafd20 id 1, counter_val 0 using FullPersist mode!
+D istent_counters.cpp:467 PCS - total: 0.000000, by minute[0.000000, 0.000000, 0.000000], minute_ts:0!
+D sistent_counters.cpp:46 0x3fcaf630(1) init ts=0 tot=0.000000 c=[0.000000,0.000000,0.000000]
+D sistent_counters.cpp:76 0x3fcaf630(1) no clock
+D shos_vfs.c:295          /counter_total_0 -> /counter_total_0 pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open /counter_total_0 0x0 0x1b6 => 0x3fca57dc counter_total_0 0 => 256 (refs 1)
+D shos_vfs.c:566          fstat 256 => 0x3fca57dc:0 => 0 (size 40)
+D istent_counters.cpp:501 Record found (r) in file /counter_total_0, pos 2, per.counter is 2
+D shos_vfs.c:594          lseek 256 0 1 => 0x3fca57dc:0 => 40
+D shos_vfs.c:594          lseek 256 30 0 => 0x3fca57dc:0 => 30
+D shos_vfs.c:421          close 256 => 0x3fca57dc:0 => 0 (refs 0)
+D istent_counters.cpp:452 0x3fcb0758 id 2, counter_val 2 using FullPersist mode!
+D istent_counters.cpp:467 PCS - total: 2.000000, by minute[0.000000, 0.000000, 0.000000], minute_ts:0!
+D sistent_counters.cpp:46 0x3fcb1ae8(2) init ts=0 tot=2.000000 c=[0.000000,0.000000,0.000000]
+D sistent_counters.cpp:76 0x3fcb1ae8(2) no clock
+D shos_vfs.c:295          /counter_total_0 -> /counter_total_0 pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open /counter_total_0 0x0 0x1b6 => 0x3fca57dc counter_total_0 0 => 256 (refs 1)
+D shos_vfs.c:566          fstat 256 => 0x3fca57dc:0 => 0 (size 40)
+D istent_counters.cpp:501 Record found (r) in file /counter_total_0, pos 3, per.counter is 0
+D shos_vfs.c:421          close 256 => 0x3fca57dc:0 => 0 (refs 0)
+D istent_counters.cpp:452 0x3fcb1f40 id 3, counter_val 0 using FullPersist mode!
+D istent_counters.cpp:467 PCS - total: 0.000000, by minute[0.000000, 0.000000, 0.000000], minute_ts:0!
+D sistent_counters.cpp:46 0x3fcafe38(3) init ts=0 tot=0.000000 c=[0.000000,0.000000,0.000000]
+D sistent_counters.cpp:76 0x3fcafe38(3) no clock
+D ponents_registry.cpp:33 Registering input:0
+D ponents_registry.cpp:33 Registering switch:0
+D erature_monitor.cpp:103 Temp 0: uptime 2.39, tC 26.82, ot 0, hf 187372
+D shos_vfs.c:295          storage.json -> /storage.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open storage.json 0x0 0x1b6 => 0x3fca57dc storage.json 0 => 256 (refs 1)
+D shos_vfs.c:566          fstat 256 => 0x3fca57dc:0 => 0 (size 107)
+D shos_vfs.c:594          lseek 256 0 2 => 0x3fca57dc:0 => 107
+D shos_vfs.c:566          fstat 256 => 0x3fca57dc:0 => 0 (size 107)
+D shos_vfs.c:594          lseek 256 0 0 => 0x3fca57dc:0 => 0
+D shos_vfs.c:421          close 256 => 0x3fca57dc:0 => 0 (refs 0)
+D shos_jstore.c:188       Got id: 'switch:0'
+D shos_jstore.c:229       Got data: '{"state":false,"on_time_rst_ts":0,"switch_on_rst_ts":0,"on_above_thr_rst_ts":0}'
+D shos_config.c:273       Set [state] = [false]
+D shos_config.c:273       Set [on_time_rst_ts] = [0]
+D shos_config.c:273       Set [switch_on_rst_ts] = [0]
+D shos_config.c:273       Set [on_above_thr_rst_ts] = [0]
+D shelly_switch.cpp:772   Exporting '': state: 0
+D hos_http_server.cpp:751 Registered handler for /relay/0
+D shos_vfs.c:295          webhooks.json -> /webhooks.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open webhooks.json 0x0 0x1b6 => 0x3fca57dc webhooks.json -2 => -2 (refs 0)
+I luetooth_server.cpp:185 BLE advertising disabled (RPC 0/1, auth 0, disc 1, locked 0, svcs 1, bond 0)
+I shos_init.cpp:67        Init done, RAM: 275292 total, 182972 free, 177812 min free
+I 2xx_ota_backend.cpp:832 Storing core dumps to app_1 (0x3a0000)
+D shos_wifi_sta.cpp:524   State 1 ev -1 timeout 0
+D shos_rpc_inst.c:438     0x3fca5f58 CHAN OPEN (loopback)
+D helly_ejs_event.cpp:114 notifying for event: {"component":"sys","event":"component_registered","target":"sys","ts":1790439031.32}
+D helly_ejs_event.cpp:114 notifying for event: {"component":"sys","event":"component_registered","target":"wifi","ts":1790439031.33}
+D helly_ejs_event.cpp:114 notifying for event: {"component":"sys","event":"component_registered","target":"ble","ts":1790439031.40}
+D helly_ejs_event.cpp:114 notifying for event: {"component":"sys","event":"component_registered","target":"cloud","ts":1790439031.40}
+D helly_ejs_event.cpp:114 notifying for event: {"component":"sys","event":"component_registered","target":"mqtt","ts":1790439031.41}
+D helly_ejs_event.cpp:114 notifying for event: {"component":"sys","event":"component_registered","target":"ws","ts":1790439031.41}
+D helly_ejs_event.cpp:114 notifying for event: {"component":"sys","event":"component_registered","target":"bthome","ts":1790439031.69}
+D helly_ejs_event.cpp:114 notifying for event: {"component":"sys","event":"component_registered","target":"knx","ts":1790439031.75}
+D helly_ejs_event.cpp:114 notifying for event: {"component":"sys","event":"component_registered","target":"input:0","ts":1790439032.17}
+I y_notifications.cpp:168 Status change of switch:0: {"temperature":{"tC":26.82,"tF":80.28}}
+D ly_notifications.cpp:99 notifying 2 channels
+D y_notifications.cpp:103 trying dst='ogemray25a-<MAC>/events':MQTT info='' ?
+D ly_notifications.cpp:72 will NOT notify 'MQTT'
+D y_notifications.cpp:103 trying dst='RPC.LOCAL':loopback info='' ?
+D ly_notifications.cpp:72 will NOT notify 'loopback'
+D y_notifications.cpp:139 notified 0 of 2 channels
+D helly_ejs_event.cpp:123 notifying for status: {"temperature":{"tC":26.82,"tF":80.28}}
+D helly_ejs_event.cpp:114 notifying for event: {"component":"sys","event":"component_registered","target":"switch:0","ts":1790439032.29}
+D shos_wifi_sta.cpp:524   State 2 ev -1 timeout 0
+D os_esp32xx_wifi.cpp:208 WiFi: STA started
+I shos_init.cpp:109       New min heap free: 155552
+D helly_sy7t502_pm.cpp:95 Voltage: nan, Current: nan, Active Power: nan, Frequency: nan, Energy: nan
+D erature_monitor.cpp:103 Temp 0: uptime 3.41, tC 26.85, ot 0, hf 159716
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.016713, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439033.84}
+D erature_monitor.cpp:103 Temp 0: uptime 4.40, tC 26.85, ot 0, hf 159672
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439034.84}
+D erature_monitor.cpp:103 Temp 0: uptime 5.40, tC 26.85, ot 0, hf 159436
+D os_esp32xx_wifi.cpp:246 WiFi: STA scan done
+D shos_wifi.c:200         WiFi scan done, num_res 7
+D shos_wifi_sta.cpp:456   WiFi scan result: 7 entries
+D shos_wifi_sta.cpp:335     0: SSID <SSID>                       BSSID <MAC-ADDR> auth 7, ch  1, RSSI -60 - ok cfg 0 att -1
+D shos_wifi_sta.cpp:335     1: SSID EposWiFi                         BSSID <MAC-ADDR> auth 3, ch  1, RSSI -61 - no cfg cfg -1 att -1
+D shos_wifi_sta.cpp:335     2: SSID EposWiFi                         BSSID <MAC-ADDR> auth 3, ch  6, RSSI -78 - no cfg cfg -1 att -1
+D shos_wifi_sta.cpp:335     3: SSID <SSID>                       BSSID <MAC-ADDR> auth 7, ch  6, RSSI -78 - ok cfg 0 att -1
+D shos_wifi_sta.cpp:335     4: SSID <SSID>                       BSSID <MAC-ADDR> auth 7, ch 11, RSSI -90 - ok cfg 0 att -1
+D shos_wifi_sta.cpp:335     5: SSID EposWiFi                         BSSID <MAC-ADDR> auth 3, ch 11, RSSI -91 - no cfg cfg -1 att -1
+D shos_wifi_sta.cpp:335     6: SSID TIM-SU                           BSSID <MAC-ADDR> auth 4, ch  6, RSSI -94 - no cfg cfg -1 att -1
+D shos_wifi_sta.cpp:432   AP queue:
+D shos_wifi_sta.cpp:440     0: SSID <SSID>                       BSSID <MAC-ADDR> ch  1 RSSI -60 cfg 0 att 0 wc 0 age -1
+D shos_wifi_sta.cpp:440     1: SSID <SSID>                       BSSID <MAC-ADDR> ch  6 RSSI -78 cfg 0 att 0 wc 0 age -1
+D shos_wifi_sta.cpp:440     2: SSID <SSID>                       BSSID <MAC-ADDR> ch 11 RSSI -90 cfg 0 att 0 wc 0 age -1
+D shos_wifi_sta.cpp:524   State 4 ev -1 timeout 0
+D shos_wifi_sta.cpp:524   State 4 ev -1 timeout 1
+D shos_wifi_sta.cpp:524   State 5 ev -1 timeout 0
+D os_esp32xx_wifi.cpp:213 WiFi: STA stopped
+D os_esp32xx_wifi.cpp:208 WiFi: STA started
+I hos_lwip_eth_if.cpp:286 ws(0x3fcb1ba8): MAC: <MAC>, MTU: 1500, IP: DHCP
+D hos_lwip_eth_if.cpp:391 ws(0x3fcb1ba8): IGMP join <IP>
+D shos_lwip.cpp:196       ws(0x3fcb1ba8): Changed: A......... (0x1)
+I shos_lwip.cpp:198       ws(0x3fcb1ba8): Added
+D shos_lwip.cpp:82        DNS:  -> <IP>
+D shos_lwip.cpp:196       ws(0x3fcb1ba8): Changed: ...S...... (0x8)
+I shos_lwip.cpp:208       ws(0x3fcb1ba8): Status up
+D shos_lwip.cpp:196       ws(0x3fcb1ba8): Changed: .........s (0x200)
+I shos_lwip.cpp:222       ws(0x3fcb1ba8): IPv6 addrs: <IPV6>,t0
+I shos_init.cpp:109       New min heap free: 154572
+I shos_init.cpp:109       New min heap free: 154336
+I shos_wifi.c:58          WiFi STA: Connecting, BSSID <MAC-ADDR> ch 1 RSSI -60
+D shos_wifi_sta.cpp:524   State 6 ev 1464224002 timeout 0
+D hos_lwip_eth_if.cpp:391 ws(0x3fcb1ba8): IGMP join <IP>
+D hos_lwip_eth_if.cpp:401 ws(0x3fcb1ba8): MLD6 join <IPV6>
+D ns_sd_responder.cpp:729 ws(0x3fcb1ba8): Joined multicast groups (1, 1)
+D esp32xx_wifi_if.cpp:233 PK check: link 0 gw 0 UC 0 MC 0 ctr 0/105 ping 0 num_act 0
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 0/0 hf 155212
+I shos_init.cpp:109       New min heap free: 152380
+D shos_wifi_sta.cpp:524   State 6 ev -1 timeout 0
+I shos_init.cpp:109       New min heap free: 152292
+I shos_init.cpp:109       New min heap free: 152028
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+I shos_init.cpp:109       New min heap free: 151768
+D helly_ejs_event.cpp:114 notifying for event: {"component":"wifi","event":"sta_connecting","ts":1790439035.82}
+I y_notifications.cpp:168 Status change of wifi: {"channel":0,"rssi":-61,"ssid":null,"sta_ip":"<IP>","status":"connecting"}
+D ly_notifications.cpp:99 notifying 2 channels
+D y_notifications.cpp:103 trying dst='ogemray25a-<MAC>/events':MQTT info='' ?
+D ly_notifications.cpp:72 will NOT notify 'MQTT'
+D y_notifications.cpp:103 trying dst='RPC.LOCAL':loopback info='' ?
+D ly_notifications.cpp:72 will NOT notify 'loopback'
+D y_notifications.cpp:139 notified 0 of 2 channels
+D helly_ejs_event.cpp:123 notifying for status: {"channel":0,"rssi":-61,"ssid":null,"sta_ip":"<IP>","status":"connecting"}
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439036.15}
+I shos_init.cpp:109       New min heap free: 149136
+I shos_net.cpp:114        WiFi STA: connecting
+D erature_monitor.cpp:103 Temp 0: uptime 6.76, tC 26.85, ot 0, hf 158480
+E _sy7t502_driver.cpp:353 ERROR: UpdateAll entered in a wrong state 2, retries: 0
+D os_esp32xx_wifi.cpp:223 WiFi: STA connected
+I shos_wifi.c:68          WiFi STA: Connected, BSSID <MAC-ADDR> ch 1 RSSI -61
+D shos_wifi_sta.cpp:524   State 6 ev 1464224003 timeout 0
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 0 UC 0 MC 0 ctr 0/105 ping 0 num_act 0
+D shos_lwip.cpp:196       ws(0x3fcb1ba8): Changed: ..L....... (0x4)
+I shos_lwip.cpp:204       ws(0x3fcb1ba8): Link up
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 154260
+D helly_ejs_event.cpp:114 notifying for event: {"component":"wifi","event":"sta_connected","channel":1,"rssi":-61,"ts":1790439036.67}
+I y_notifications.cpp:168 Status change of wifi: {"channel":1,"rssi":-61,"ssid":"<SSID>","sta_ip":"<IP>","status":"connected"}
+D ly_notifications.cpp:99 notifying 2 channels
+D y_notifications.cpp:103 trying dst='ogemray25a-<MAC>/events':MQTT info='' ?
+D ly_notifications.cpp:72 will NOT notify 'MQTT'
+D y_notifications.cpp:103 trying dst='RPC.LOCAL':loopback info='' ?
+D ly_notifications.cpp:72 will NOT notify 'loopback'
+D y_notifications.cpp:139 notified 0 of 2 channels
+D helly_ejs_event.cpp:123 notifying for status: {"channel":1,"rssi":-61,"ssid":"<SSID>","sta_ip":"<IP>","status":"connected"}
+I shos_net.cpp:118        WiFi STA: connected
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439036.84}
+D hos_lwip_eth_if.cpp:401 ws(0x3fcb1ba8): MLD6 join <IPV6>
+D shos_lwip.cpp:196       ws(0x3fcb1ba8): Changed: .........s (0x200)
+I shos_lwip.cpp:222       ws(0x3fcb1ba8): IPv6 addrs: <IPV6>,t1
+D shos_lwip.cpp:196       ws(0x3fcb1ba8): Changed: ....IGMS.. (0x4f0)
+I shos_lwip.cpp:118       Default: (null) -> ws(0x3fcb1ba8) (<IP>, NAT? no)
+D shos_lwip.cpp:82        DNS: <IP> <IP> -> <IP> <IP>
+D shos_wifi_sta.cpp:524   State 7 ev 1464224004 timeout 0
+D shos_wifi_sta.cpp:432   AP history:
+D shos_wifi_sta.cpp:440     0: SSID <SSID>                       BSSID <MAC-ADDR> ch  1 RSSI -61 cfg 0 att 0 wc 0 age 1
+D helly_ejs_event.cpp:114 notifying for event: {"component":"wifi","event":"sta_ip_acquired","sta_ip":"<IP>","ssid":"<SSID>","channel":1,"rssi":-61,"ts":1790439036.95}
+I y_notifications.cpp:168 Status change of wifi: {"channel":1,"rssi":-61,"ssid":"<SSID>","sta_ip":"<IP>","status":"got ip"}
+D ly_notifications.cpp:99 notifying 2 channels
+D y_notifications.cpp:103 trying dst='ogemray25a-<MAC>/events':MQTT info='' ?
+D ly_notifications.cpp:72 will NOT notify 'MQTT'
+D y_notifications.cpp:103 trying dst='RPC.LOCAL':loopback info='' ?
+D ly_notifications.cpp:72 will NOT notify 'loopback'
+D y_notifications.cpp:139 notified 0 of 2 channels
+D helly_ejs_event.cpp:123 notifying for status: {"channel":1,"rssi":-61,"ssid":"<SSID>","sta_ip":"<IP>","status":"got ip"}
+I shos_net.cpp:125        WiFi STA: ready, IP <IP>, GW <IP>, DNS <IP>, NTP <IP>
+I shos_mqtt_conn.c:674    MQTT0: Connecting to <IP> (<IP>)
+I shos_mqtt_conn.c:506    MQTT0: Connect status 0
+D shos_vfs.c:295          ble_devices.json -> /ble_devices.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:538          stat ble_devices.json => 0x3fca57dc ble_devices.json => -2 (size 0)
+D shos_vfs.c:295          / -> / pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:295          / -> / pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_rpc_inst.c:179     'ogemray25a-<MAC>/events' -> 0x3fca5eec
+D shos_rpc_inst.c:700     QUEUED FRAME (1052): <payload omitted>
+D shos_vfs.c:295          ble_devices.json -> /ble_devices.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:538          stat ble_devices.json => 0x3fca57dc ble_devices.json => -2 (size 0)
+D shos_vfs.c:295          / -> / pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:295          / -> / pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/online @ 1 RETAIN (4) -> 0
+D shos_mqtt_conn.c:185    MQTT0: sub ogemray25a-<MAC>/rpc @ 1 -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/ble @ 1 (2) -> 0
+D hos_http_server.cpp:230 0x3fcbd734: HTTP connection from <IP> via ws0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/bthome @ 1 (2) -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/cloud @ 1 (19) -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/input:0 @ 1 (22) -> -1
+I shos_init.cpp:109       New min heap free: 140540
+D helly_ejs_event.cpp:114 notifying for event: {"component":"mqtt", "event":"connected", "ts":1790439037.19}
+I y_notifications.cpp:168 Status change of mqtt: {"connected":true}
+D ly_notifications.cpp:99 notifying 2 channels
+D y_notifications.cpp:103 trying dst='ogemray25a-<MAC>/events':MQTT info='' ?
+D shos_rpc_inst.c:179     'ogemray25a-<MAC>/events' -> 0x3fca5eec
+D shos_rpc_inst.c:700     QUEUED FRAME (152): <payload omitted>
+D y_notifications.cpp:135 NotifyStatus: 'ogemray25a-<MAC>/events' (MQTT) -> ok? 1
+D y_notifications.cpp:103 trying dst='RPC.LOCAL':loopback info='' ?
+D ly_notifications.cpp:72 will NOT notify 'loopback'
+D y_notifications.cpp:139 notified 1 of 2 channels
+D helly_ejs_event.cpp:123 notifying for status: {"connected":true}
+D shos_rpc_inst.c:438     0x3fca5eec CHAN OPEN (MQTT)
+D shos_rpc_inst.c:680     0x3fca5eec SEND FRAME (1052): <payload omitted>
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/input:0 @ 1 (22) -> -1
+I shos_init.cpp:109       New min heap free: 139832
+D erature_monitor.cpp:103 Temp 0: uptime 7.88, tC 26.85, ot 0, hf 148072
+I shos_time.cpp:65        Setting time from SNTP (1790439182.102 delta +144.420)
+D istent_counters.cpp:163 0x3fcafe38 (3) time delta = 144.420159
+D istent_counters.cpp:163 0x3fcb1ae8 (2) time delta = 144.420159
+D istent_counters.cpp:163 0x3fcaf630 (1) time delta = 144.420159
+D istent_counters.cpp:163 0x3fcb1f9c (0) time delta = 144.420159
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/input:0 @ 1 (22) -> -1
+D shos_rpc_inst.c:479     0x3fca5eec FRAME SENT (1)
+D shos_rpc_inst.c:680     0x3fca5eec SEND FRAME (152): <payload omitted>
+I shelly_sys.cpp:344      Time set to 7.887611 from 1
+D shelly_sys.cpp:1442     Last sync time updated current 0, new 1790439182
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/input:0 @ 1 (22) -> -1
+D shos_rpc_inst.c:479     0x3fca5eec FRAME SENT (1)
+I y_notifications.cpp:168 Status change of sys: {"last_sync_ts":1790439182}
+D ly_notifications.cpp:99 notifying 2 channels
+D y_notifications.cpp:103 trying dst='ogemray25a-<MAC>/events':MQTT info='' ?
+D shos_rpc_inst.c:179     'ogemray25a-<MAC>/events' -> 0x3fca5eec
+D shos_rpc_inst.c:680     0x3fca5eec SEND FRAME (160): <payload omitted>
+D y_notifications.cpp:135 NotifyStatus: 'ogemray25a-<MAC>/events' (MQTT) -> ok? 1
+D y_notifications.cpp:103 trying dst='RPC.LOCAL':loopback info='' ?
+D ly_notifications.cpp:72 will NOT notify 'loopback'
+D y_notifications.cpp:139 notified 1 of 2 channels
+D helly_ejs_event.cpp:123 notifying for status: {"last_sync_ts":1790439182}
+D shos_vfs.c:295          / -> / pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:295          / -> / pl 1 -> 1 0x3fca57dc (refs 1)
+I y_notifications.cpp:168 Status change of sys: {"time":"18:13","unixtime":1790439182}
+D ly_notifications.cpp:99 notifying 2 channels
+D y_notifications.cpp:103 trying dst='ogemray25a-<MAC>/events':MQTT info='' ?
+D shos_rpc_inst.c:179     'ogemray25a-<MAC>/events' -> 0x3fca5eec
+D shos_rpc_inst.c:700     QUEUED FRAME (171): <payload omitted>
+D y_notifications.cpp:135 NotifyStatus: 'ogemray25a-<MAC>/events' (MQTT) -> ok? 1
+D y_notifications.cpp:103 trying dst='RPC.LOCAL':loopback info='' ?
+D ly_notifications.cpp:72 will NOT notify 'loopback'
+D y_notifications.cpp:139 notified 1 of 2 channels
+D helly_ejs_event.cpp:123 notifying for status: {"time":"18:13","unixtime":1790439182}
+D shos_vfs.c:295          / -> / pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:295          / -> / pl 1 -> 1 0x3fca57dc (refs 1)
+I shos_init.cpp:109       New min heap free: 139068
+D shos_lwip.cpp:196       ws(0x3fcb1ba8): Changed: .........s (0x200)
+I shos_lwip.cpp:222       ws(0x3fcb1ba8): IPv6 addrs: <IPV6>,P
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/input:0 @ 1 (22) -> -1
+D shos_rpc_inst.c:479     0x3fca5eec FRAME SENT (1)
+D shos_rpc_inst.c:680     0x3fca5eec SEND FRAME (171): <payload omitted>
+D sistent_counters.cpp:83 0x3fcafe38(3) now=1790439182.447554 ps=1790439180
+I sistent_counters.cpp:98 0x3fcafe38(3) start tracking from 1790439180
+D istent_counters.cpp:139 0x3fcafe38(3) next rotate in 57.552446 s
+D sistent_counters.cpp:83 0x3fcb1ae8(2) now=1790439182.467754 ps=1790439180
+I sistent_counters.cpp:98 0x3fcb1ae8(2) start tracking from 1790439180
+D istent_counters.cpp:139 0x3fcb1ae8(2) next rotate in 57.532246 s
+D sistent_counters.cpp:83 0x3fcaf630(1) now=1790439182.487647 ps=1790439180
+I sistent_counters.cpp:98 0x3fcaf630(1) start tracking from 1790439180
+D istent_counters.cpp:139 0x3fcaf630(1) next rotate in 57.512353 s
+D sistent_counters.cpp:83 0x3fcb1f9c(0) now=1790439182.507500 ps=1790439180
+D istent_counters.cpp:121 0x3fcb1f9c(0) rotating 1790439120
+D istent_counters.cpp:139 0x3fcb1f9c(0) next rotate in 57.492500 s
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D ns_sd_responder.cpp:349 ws(0x3fcb1ba8): Probe 1 Ogemray25A-<MAC>.local any@any (<IP>)
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/input:0 @ 1 (22) -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/knx @ 1 (2) -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/mqtt @ 1 (18) -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/switch:0 @ 1 (279) -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/sys @ 1 (344) -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/wifi @ 1 (130) -> -1
+D shos_rpc_inst.c:479     0x3fca5eec FRAME SENT (1)
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0","id":0,"event":"aenergy_update","ts":1790439182.52,"aenergy":{"total":1.000}}
+I y_notifications.cpp:168 Status change of switch:0: {"aenergy":{"by_minute":[0.000,0.000,0.000],"minute_ts":1790439180,"total":1.000},"apower":0.0,"current":0.000,"freq":null,"voltage":0.0}
+D ly_notifications.cpp:99 notifying 2 channels
+D y_notifications.cpp:103 trying dst='ogemray25a-<MAC>/events':MQTT info='' ?
+D shos_rpc_inst.c:179     'ogemray25a-<MAC>/events' -> 0x3fca5eec
+D shos_rpc_inst.c:680     0x3fca5eec SEND FRAME (275): <payload omitted>
+D y_notifications.cpp:135 NotifyStatus: 'ogemray25a-<MAC>/events' (MQTT) -> ok? 1
+D y_notifications.cpp:103 trying dst='RPC.LOCAL':loopback info='' ?
+D ly_notifications.cpp:72 will NOT notify 'loopback'
+D y_notifications.cpp:139 notified 1 of 2 channels
+D helly_ejs_event.cpp:123 notifying for status: {"aenergy":{"by_minute":[0.000,0.000,0.000],"minute_ts":1790439180,"total":1.000},"apower":0.0,"current":0.000,"freq":null,"voltage":0.0}
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439182.53}
+I shos_init.cpp:109       New min heap free: 133220
+D erature_monitor.cpp:103 Temp 0: uptime 8.56, tC 26.89, ot 0, hf 140156
+E _sy7t502_driver.cpp:353 ERROR: Uart Timeout!, retries: 1
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/wifi @ 1 (130) -> 0
+D ns_sd_responder.cpp:349 ws(0x3fcb1ba8): Probe 2 Ogemray25A-<MAC>.local any@any (<IP>)
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/ws @ 1 (19) -> -1
+D hos_http_server.cpp:688 0x3fcbd734: Switching to WebSockets
+D shos_rpc_inst.c:536     0x3fcbe4d4 '' WS_in
+D shos_rpc_inst.c:438     0x3fcbe4d4 CHAN OPEN (WS_in from <IP> via ws0)
+D shos_rpc_inst.c:479     0x3fca5eec FRAME SENT (1)
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/ws @ 1 (19) -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/mqtt @ 1 (18) -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/events/rpc @ 1 (1052) -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/events/rpc @ 1 (152) -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/events/rpc @ 1 (160) -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/sys @ 1 (359) -> -1
+D shos_rpc_inst.c:452     0x3fcbe4d4 GOT FRAME (108): <payload omitted>
+D shos_rpc_inst.c:331     '128' '<CLIENT>' '' 'Shelly.GetDeviceInfo'
+I shos_rpc_inst.c:241     Shelly.GetDeviceInfo [128@<CLIENT>] via WS_in from <IP> via ws0
+D shelly_update.cpp:653   EFUSE signature bits: 00
+D ns_sd_responder.cpp:349 ws(0x3fcb1ba8): Probe 3 Ogemray25A-<MAC>.local any@any (<IP>)
+D ns_sd_responder.cpp:411 ws(0x3fcb1ba8): Announce 1 Ogemray25A-<MAC>.local any@any (<IP>)
+I shos_init.cpp:109       New min heap free: 130528
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 32 MC 11 ctr 0/105 ping 0 num_act 0
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 140304
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/sys @ 1 (359) -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/sys @ 1 (359) -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/events/rpc @ 1 (171) -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/events/rpc @ 1 (275) -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/switch:0 @ 1 (334) -> 0
+D shos_rpc_inst.c:479     0x3fcbe4d4 FRAME SENT (1)
+D shos_rpc_inst.c:452     0x3fcbe4d4 GOT FRAME (84): <payload omitted>
+D shos_rpc_inst.c:331     '129' '<CLIENT>' '' 'RPC.Ping'
+I shos_rpc_inst.c:241     RPC.Ping [129@<CLIENT>] via WS_in from <IP> via ws0
+D shos_rpc_inst.c:680     0x3fcbe4d4 SEND FRAME (130): <payload omitted>
+D shos_rpc_inst.c:479     0x3fcbe4d4 FRAME SENT (1)
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439183.26}
+D shos_rpc_inst.c:452     0x3fcbe4d4 GOT FRAME (106): <payload omitted>
+D shos_rpc_inst.c:331     '130' '<CLIENT>' '' 'Shelly.GetComponents'
+I shos_rpc_inst.c:241     Shelly.GetComponents [130@<CLIENT>] via WS_in from <IP> via ws0
+D shos_vfs.c:295          ble_devices.json -> /ble_devices.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:538          stat ble_devices.json => 0x3fca57dc ble_devices.json => -2 (size 0)
+D shos_vfs.c:295          / -> / pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:295          / -> / pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_rpc_inst.c:680     0x3fcbe4d4 SEND FRAME (2535): <payload omitted>
+D ns_sd_responder.cpp:349 ws(0x3fcb1ba8): Probe 1 Ogemray25A-<MAC>.local any@any (<IPV6>)
+I shos_init.cpp:109       New min heap free: 126736
+D shos_rpc_inst.c:479     0x3fcbe4d4 FRAME SENT (1)
+D erature_monitor.cpp:103 Temp 0: uptime 9.45, tC 26.89, ot 0, hf 145092
+D shos_rpc_inst.c:452     0x3fcbe4d4 GOT FRAME (106): <payload omitted>
+D shos_rpc_inst.c:331     '131' '<CLIENT>' '' 'Shelly.GetComponents'
+I shos_rpc_inst.c:241     Shelly.GetComponents [131@<CLIENT>] via WS_in from <IP> via ws0
+D shos_rpc_inst.c:680     0x3fcbe4d4 SEND FRAME (819): <payload omitted>
+D ns_sd_responder.cpp:349 ws(0x3fcb1ba8): Probe 2 Ogemray25A-<MAC>.local any@any (<IPV6>)
+D shos_rpc_inst.c:479     0x3fcbe4d4 FRAME SENT (1)
+D shos_rpc_inst.c:452     0x3fcbe4d4 GOT FRAME (91): <payload omitted>
+D shos_rpc_inst.c:331     '132' '<CLIENT>' '' 'Schedule.List'
+I shos_rpc_inst.c:241     Schedule.List [132@<CLIENT>] via WS_in from <IP> via ws0
+D shos_vfs.c:295          crontab.json -> /crontab.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open crontab.json 0x0 0x1b6 => 0x3fca57dc crontab.json -2 => -2 (refs 0)
+D shos_rpc_inst.c:680     0x3fcbe4d4 SEND FRAME (98): <payload omitted>
+D shos_rpc_inst.c:479     0x3fcbe4d4 FRAME SENT (1)
+D shos_rpc_inst.c:452     0x3fcbe4d4 GOT FRAME (90): <payload omitted>
+D shos_rpc_inst.c:331     '133' '<CLIENT>' '' 'Webhook.List'
+I shos_rpc_inst.c:241     Webhook.List [133@<CLIENT>] via WS_in from <IP> via ws0
+D shos_rpc_inst.c:680     0x3fcbe4d4 SEND FRAME (99): <payload omitted>
+D shos_rpc_inst.c:479     0x3fcbe4d4 FRAME SENT (1)
+D shos_rpc_inst.c:452     0x3fcbe4d4 GOT FRAME (97): <payload omitted>
+D shos_rpc_inst.c:331     '134' '<CLIENT>' '' 'KVS.GetMany'
+I shos_rpc_inst.c:241     KVS.GetMany [134@<CLIENT>] via WS_in from <IP> via ws0
+D shos_rpc_inst.c:680     0x3fcbe4d4 SEND FRAME (112): <payload omitted>
+D ns_sd_responder.cpp:411 ws(0x3fcb1ba8): Announce 2 Ogemray25A-<MAC>.local any@any (<IP>)
+I ns_sd_responder.cpp:236 ws(0x3fcb1ba8): Announced Ogemray25A-<MAC>.local any@any (<IP>)
+D shos_rpc_inst.c:479     0x3fcbe4d4 FRAME SENT (1)
+D ns_sd_responder.cpp:349 ws(0x3fcb1ba8): Probe 3 Ogemray25A-<MAC>.local any@any (<IPV6>)
+D ns_sd_responder.cpp:411 ws(0x3fcb1ba8): Announce 1 Ogemray25A-<MAC>.local any@any (<IPV6>)
+D shos_rpc_inst.c:452     0x3fcbe4d4 GOT FRAME (91): <payload omitted>
+D shos_rpc_inst.c:331     '135' '<CLIENT>' '' 'Schedule.List'
+I shos_rpc_inst.c:241     Schedule.List [135@<CLIENT>] via WS_in from <IP> via ws0
+D shos_vfs.c:295          crontab.json -> /crontab.json pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open crontab.json 0x0 0x1b6 => 0x3fca57dc crontab.json -2 => -2 (refs 0)
+D shos_rpc_inst.c:680     0x3fcbe4d4 SEND FRAME (98): <payload omitted>
+D shos_rpc_inst.c:479     0x3fcbe4d4 FRAME SENT (1)
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439184.30}
+D shos_rpc_inst.c:452     0x3fcbe4d4 GOT FRAME (96): <payload omitted>
+D shos_rpc_inst.c:331     '136' '<CLIENT>' '' 'Shelly.ListMethods'
+I shos_rpc_inst.c:241     Shelly.ListMethods [136@<CLIENT>] via WS_in from <IP> via ws0
+D shos_rpc_inst.c:680     0x3fcbe4d4 SEND FRAME (3084): <payload omitted>
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 57 MC 20 ctr 1/105 ping 0 num_act 0
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 140536
+I shos_init.cpp:109       New min heap free: 119500
+D shos_rpc_inst.c:479     0x3fcbe4d4 FRAME SENT (1)
+D erature_monitor.cpp:103 Temp 0: uptime 10.97, tC 26.92, ot 0, hf 146064
+D shos_rpc_inst.c:452     0x3fcbe4d4 GOT FRAME (110): <payload omitted>
+D shos_rpc_inst.c:331     '137' '<CLIENT>' '' 'Webhook.ListAllSupported'
+I shos_rpc_inst.c:241     Webhook.ListAllSupported [137@<CLIENT>] via WS_in from <IP> via ws0
+D shos_rpc_inst.c:680     0x3fcbe4d4 SEND FRAME (2129): <payload omitted>
+D ns_sd_responder.cpp:411 ws(0x3fcb1ba8): Announce 2 Ogemray25A-<MAC>.local any@any (<IPV6>)
+I ns_sd_responder.cpp:236 ws(0x3fcb1ba8): Announced Ogemray25A-<MAC>.local any@any (<IPV6>)
+D shos_rpc_inst.c:479     0x3fcbe4d4 FRAME SENT (1)
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439185.51}
+D shos_rpc_inst.c:452     0x3fcbe4d4 GOT FRAME (111): <payload omitted>
+D shos_rpc_inst.c:331     '138' '<CLIENT>' '' 'Webhook.ListAllSupported'
+I shos_rpc_inst.c:241     Webhook.ListAllSupported [138@<CLIENT>] via WS_in from <IP> via ws0
+D shos_rpc_inst.c:680     0x3fcbe4d4 SEND FRAME (147): <payload omitted>
+D shos_rpc_inst.c:479     0x3fcbe4d4 FRAME SENT (1)
+D erature_monitor.cpp:103 Temp 0: uptime 11.40, tC 26.92, ot 0, hf 150448
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439186.26}
+D erature_monitor.cpp:103 Temp 0: uptime 12.40, tC 26.92, ot 0, hf 152648
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 66 MC 31 ctr 2/105 ping 0 num_act 0
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 152680
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439187.26}
+W istent_counters.cpp:585 PCS write interval < 60s
+D istent_counters.cpp:590 Counter id: 0, value: 1
+D istent_counters.cpp:590 Counter id: 1, value: 0
+D istent_counters.cpp:590 Counter id: 2, value: 2
+D istent_counters.cpp:590 Counter id: 3, value: 0
+D shos_vfs.c:295          /counter_total_0 -> /counter_total_0 pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open /counter_total_0 0x0 0x1b6 => 0x3fca57dc counter_total_0 0 => 256 (refs 1)
+D shos_vfs.c:566          fstat 256 => 0x3fca57dc:0 => 0 (size 40)
+D shos_vfs.c:421          close 256 => 0x3fca57dc:0 => 0 (refs 0)
+D shos_vfs.c:295          /counter_total_1 -> /counter_total_1 pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open /counter_total_1 0x0 0x1b6 => 0x3fca57dc counter_total_1 -2 => -2 (refs 0)
+D erature_monitor.cpp:103 Temp 0: uptime 13.40, tC 26.92, ot 0, hf 152656
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439188.26}
+D erature_monitor.cpp:103 Temp 0: uptime 14.40, tC 27.20, ot 0, hf 152656
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 67 MC 41 ctr 3/105 ping 0 num_act 0
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 152680
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439189.26}
+D erature_monitor.cpp:103 Temp 0: uptime 15.40, tC 27.11, ot 0, hf 152656
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439190.26}
+D erature_monitor.cpp:103 Temp 0: uptime 16.40, tC 27.11, ot 0, hf 152692
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 67 MC 48 ctr 4/105 ping 0 num_act 0
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 152680
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439191.26}
+D erature_monitor.cpp:103 Temp 0: uptime 17.40, tC 27.14, ot 0, hf 152692
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439192.26}
+D erature_monitor.cpp:103 Temp 0: uptime 18.40, tC 27.14, ot 0, hf 152692
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 67 MC 56 ctr 5/105 ping 0 num_act 0
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 152680
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439193.26}
+D erature_monitor.cpp:103 Temp 0: uptime 19.40, tC 27.14, ot 0, hf 152656
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439194.26}
+D os_vfs_dev_utils.cpp:43 Reading 512@boot+0...
+D shos_vfs_dev.c:206      Close  (esp32part) refs 0
+D shos_vfs.c:295          / -> / pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:295          / -> / pl 1 -> 1 0x3fca57dc (refs 1)
+I shelly_update.cpp:365   Checking for updates (2.0.0 20260710-101145/2.0.0-g87fbfa4 {"bl":16778239,"t":1790439194.437,"ut":20222729,"hf":151084,"hmf":119500,"fs":1048576,"fsf":573440,"pkw":0})
+I hos_http_client.cpp:336 0x3fcbba24: HTTPS GET https://updates.shelly.cloud/update/Ogemray25?src=auto1 (CA shelly_cloud.pem,ca.pem)
+D hos_http_client.cpp:396 0x3fcbba24: Resolved updates.shelly.cloud to <IP>
+D hos_http_client.cpp:399 0x3fcbba24: Connecting to <IP>: 0
+D erature_monitor.cpp:103 Temp 0: uptime 20.40, tC 27.11, ot 0, hf 148360
+D shos_vfs.c:295          shelly_cloud.pem -> /shelly_cloud.pem pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open shelly_cloud.pem 0x0 0x1b6 => 0x3fca57dc shelly_cloud.pem 0 => 256 (refs 1)
+D shos_vfs.c:566          fstat 256 => 0x3fca57dc:0 => 0 (size 2129)
+D shos_vfs.c:594          lseek 256 0 1 => 0x3fca57dc:0 => 128
+D shos_vfs.c:594          lseek 256 21 0 => 0x3fca57dc:0 => 21
+D shos_vfs.c:594          lseek 256 21 0 => 0x3fca57dc:0 => 21
+D shos_vfs.c:594          lseek 256 713 0 => 0x3fca57dc:0 => 713
+D shos_vfs.c:421          close 256 => 0x3fca57dc:0 => 0 (refs 0)
+D shos_vfs.c:295          ca.pem -> /ca.pem pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:388          open ca.pem 0x0 0x1b6 => 0x3fca57dc ca.pem 0 => 256 (refs 1)
+D shos_vfs.c:566          fstat 256 => 0x3fca57dc:0 => 0 (size 157130)
+D shos_vfs.c:594          lseek 256 0 1 => 0x3fca57dc:0 => 128
+D shos_vfs.c:594          lseek 256 1312 0 => 0x3fca57dc:0 => 1312
+D shos_vfs.c:421          close 256 => 0x3fca57dc:0 => 0 (refs 0)
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 72 MC 65 ctr 6/105 ping 0 num_act 0
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 143716
+D shos_wifi_sta.cpp:524   State 8 ev -1 timeout 1
+D shos_wifi_sta.cpp:813   Avg RSSI -61, ok
+D hos_http_client.cpp:464 0x3fcbba24: Connection result: 0
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439195.26}
+D shos_http_base.cpp:568  0x3fcbba24: Connection closed normally, 0x3fcbecb0 0
+D hos_http_client.cpp:644 0x3fcbba24: Headers parsed: code 200, 6 hdrs, 213 bytes left; body parser: identity (0x3fcb3040)
+I hos_http_client.cpp:678 0x3fcbba24: Finished; bytes 714/422, code 200, redir 0/3, auth 0, status OK
+D shos_http_base.cpp:113  0x3fcbba24: Deleted
+I y_notifications.cpp:168 Status change of sys: {"available_updates":{"stable":{"version":"2.0.1"}}}
+D ly_notifications.cpp:99 notifying 3 channels
+D y_notifications.cpp:103 trying dst='<CLIENT>':WS_in info='from <IP> via ws0' ?
+D shos_rpc_inst.c:179     '<CLIENT>' -> 0x3fcbe4d4
+D shos_rpc_inst.c:680     0x3fcbe4d4 SEND FRAME (172): <payload omitted>
+D y_notifications.cpp:135 NotifyStatus: '<CLIENT>' (WS_in) -> ok? 1
+D y_notifications.cpp:103 trying dst='ogemray25a-<MAC>/events':MQTT info='' ?
+D shos_rpc_inst.c:179     'ogemray25a-<MAC>/events' -> 0x3fca5eec
+D shos_rpc_inst.c:680     0x3fca5eec SEND FRAME (185): <payload omitted>
+D y_notifications.cpp:135 NotifyStatus: 'ogemray25a-<MAC>/events' (MQTT) -> ok? 1
+D y_notifications.cpp:103 trying dst='RPC.LOCAL':loopback info='' ?
+D ly_notifications.cpp:72 will NOT notify 'loopback'
+D y_notifications.cpp:139 notified 2 of 3 channels
+D helly_ejs_event.cpp:123 notifying for status: {"available_updates":{"stable":{"version":"2.0.1"}}}
+D shos_vfs.c:295          / -> / pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_vfs.c:295          / -> / pl 1 -> 1 0x3fca57dc (refs 1)
+D shos_rpc_inst.c:479     0x3fcbe4d4 FRAME SENT (1)
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/events/rpc @ 1 (185) -> 0
+D shos_mqtt_conn.c:465    MQTT0: pub ogemray25a-<MAC>/status/sys @ 1 (388) -> 0
+D shos_rpc_inst.c:479     0x3fca5eec FRAME SENT (1)
+D erature_monitor.cpp:103 Temp 0: uptime 21.40, tC 27.11, ot 0, hf 152332
+D ly_notifications.cpp:99 notifying 3 channels
+D y_notifications.cpp:103 trying dst='<CLIENT>':WS_in info='from <IP> via ws0' ?
+D y_notifications.cpp:103 trying dst='ogemray25a-<MAC>/events':MQTT info='' ?
+D y_notifications.cpp:103 trying dst='RPC.LOCAL':loopback info='' ?
+D ly_notifications.cpp:72 will NOT notify 'loopback'
+D y_notifications.cpp:139 notified 0 of 3 channels
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439196.26}
+D erature_monitor.cpp:103 Temp 0: uptime 22.40, tC 27.20, ot 0, hf 153880
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 79 MC 74 ctr 7/105 ping 0 num_act 0
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 153900
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439197.26}
+D erature_monitor.cpp:103 Temp 0: uptime 23.40, tC 27.11, ot 0, hf 153836
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439198.26}
+D erature_monitor.cpp:103 Temp 0: uptime 24.40, tC 27.14, ot 0, hf 153872
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 79 MC 84 ctr 8/105 ping 0 num_act 0
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 153900
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439199.26}
+D erature_monitor.cpp:103 Temp 0: uptime 25.40, tC 27.14, ot 0, hf 153872
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439200.26}
+D erature_monitor.cpp:103 Temp 0: uptime 26.40, tC 27.14, ot 0, hf 153872
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 79 MC 93 ctr 9/105 ping 0 num_act 0
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 153900
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439201.26}
+D erature_monitor.cpp:103 Temp 0: uptime 27.40, tC 27.20, ot 0, hf 153800
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439202.26}
+D erature_monitor.cpp:103 Temp 0: uptime 28.40, tC 27.14, ot 0, hf 153872
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 79 MC 105 ctr 10/105 ping 0 num_act 0
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439203.26}
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 153900
+D erature_monitor.cpp:103 Temp 0: uptime 29.40, tC 27.14, ot 0, hf 153872
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439204.26}
+D erature_monitor.cpp:103 Temp 0: uptime 30.40, tC 27.11, ot 0, hf 153872
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439205.26}
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 79 MC 116 ctr 11/105 ping 0 num_act 0
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 153864
+D erature_monitor.cpp:103 Temp 0: uptime 31.40, tC 27.14, ot 0, hf 153836
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439206.26}
+D shos_rpc_inst.c:452     0x3fcbe4d4 GOT FRAME (84): <payload omitted>
+D shos_rpc_inst.c:331     '139' '<CLIENT>' '' 'RPC.Ping'
+I shos_rpc_inst.c:241     RPC.Ping [139@<CLIENT>] via WS_in from <IP> via ws0
+D shos_rpc_inst.c:680     0x3fcbe4d4 SEND FRAME (130): <payload omitted>
+D shos_rpc_inst.c:479     0x3fcbe4d4 FRAME SENT (1)
+D erature_monitor.cpp:103 Temp 0: uptime 32.40, tC 27.14, ot 0, hf 153872
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439207.26}
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 81 MC 127 ctr 12/105 ping 0 num_act 0
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 153900
+D erature_monitor.cpp:103 Temp 0: uptime 33.40, tC 27.14, ot 0, hf 153872
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439208.26}
+D erature_monitor.cpp:103 Temp 0: uptime 34.40, tC 27.11, ot 0, hf 153872
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439209.26}
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 81 MC 137 ctr 13/105 ping 0 num_act 0
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 153900
+D erature_monitor.cpp:103 Temp 0: uptime 35.40, tC 27.14, ot 0, hf 153836
+D shos_wifi_sta.cpp:524   State 8 ev -1 timeout 1
+D shos_wifi_sta.cpp:813   Avg RSSI -61, ok
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439210.26}
+D erature_monitor.cpp:103 Temp 0: uptime 36.40, tC 27.20, ot 0, hf 153872
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439211.26}
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 81 MC 147 ctr 14/105 ping 0 num_act 0
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 153900
+D erature_monitor.cpp:103 Temp 0: uptime 37.40, tC 27.11, ot 0, hf 153872
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439212.26}
+D erature_monitor.cpp:103 Temp 0: uptime 38.40, tC 27.11, ot 0, hf 153872
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439213.26}
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 81 MC 156 ctr 15/105 ping 0 num_act 0
+D esp32xx_wifi_if.cpp:278 PK check: sending probe (15)
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 153672
+D shos_lwip_ping.cpp:190  <IP> ping 0x589d response seq 1 rtt 4 ms
+D esp32xx_wifi_if.cpp:294 PK check: ctr 15 gateway is pingable
+D erature_monitor.cpp:103 Temp 0: uptime 39.40, tC 27.14, ot 0, hf 153832
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439214.26}
+D erature_monitor.cpp:103 Temp 0: uptime 40.40, tC 27.14, ot 0, hf 153868
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439215.26}
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 82 MC 163 ctr 16/105 ping 0 num_act 0
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 153900
+D erature_monitor.cpp:103 Temp 0: uptime 41.40, tC 27.11, ot 0, hf 153872
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439216.26}
+D erature_monitor.cpp:103 Temp 0: uptime 42.40, tC 27.14, ot 0, hf 153872
+D helly_sy7t502_pm.cpp:95 Voltage: 0.000000, Current: 0.000000, Active Power: 0.000000, Frequency: nan, Energy: 0.000000
+D helly_ejs_event.cpp:114 notifying for event: {"component":"switch:0", "id":0, "event":"power_measurement", "apower":0.0, "ts":1790439217.26}
+D esp32xx_wifi_if.cpp:233 PK check: link 1 gw 1 UC 82 MC 172 ctr 16/105 ping 0 num_act 0
+D hos_lwip_eth_if.cpp:425 ws(0x3fcb1ba8): Status: server 0 oper_up 1 link_up 1/1 hf 153900
+D shos_rpc_inst.c:452     0x3fcbe4d4 GOT FRAME (84): <payload omitted>
+D shos_rpc_inst.c:331     '140' '<CLIENT>' '' 'RPC.Ping'
+I shos_rpc_inst.c:241     RPC.Ping [140@<CLIENT>] via WS_in from <IP> via ws0
+D shos_rpc_inst.c:680     0x3fcbe4d4 SEND FRAME (130): <payload omitted>
+D shos_rpc_inst.c:479     0x3fcbe4d4 FRAME SENT (1)
